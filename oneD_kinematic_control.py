@@ -44,7 +44,7 @@ x_d = 4.0
 
 # -------------------------------------------------------
 # CHANGE THIS TO TUNE THE CONTROLLER - proportional gain
-k_P = 10
+k_P = 3
 # -------------------------------------------------------
 
 
@@ -55,12 +55,6 @@ for k in range(1, N):
 
 # %%
 # MAKE A PLOT
-
-# Change some plot settings (optional)
-plt.rc("text", usetex=False)
-# plt.rc("text.latex", preamble=r"\usepackage{cmbright,amsmath}")
-plt.rc("savefig", format="pdf")
-plt.rc("savefig", bbox="tight")
 
 # Plot the state (x) and input (u) vs time (t)
 fig1 = plt.figure(1)
@@ -75,8 +69,6 @@ plt.grid(color="0.95")
 plt.ylabel(r"$u$ [m/s]")
 plt.xlabel(r"$t$ [s]")
 
-# Save the plot
-plt.savefig("./oneD_kinematic_control_fig1.pdf")
 
 # %%
 # MAKE AN ANIMATION
@@ -88,7 +80,7 @@ LENGTH = 1.0
 vehicle = Cart(LENGTH)
 
 # Create and save the animation
-ani = vehicle.animate(x, T, True, "./oneD_kinematic_control.gif")
+ani = vehicle.animate(x, T)
 
 # %%
 
